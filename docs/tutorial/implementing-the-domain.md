@@ -8,7 +8,7 @@ sidebar_position: 3
 
 We want to have a backend service for a task management application. First of all, We try to prepare a big picture. We design the domain as a strategic design phase. This app includes 3 parts. Project, sprint, and task parts. According to the scale of the system (the application or the requirements), we can define each part as a bounded context. In this case, the scale of each part is small, so We consider that we have a bounded context equivalent to each part. Therefore. According to the picture below, we have three bounded contexts. Whole of this space is considered as the task management subdomain.
 
-!\[\](/img/docs/0001-bounded-context.jpg)Figure 0001
+![](/img/docs/0001-bounded-context.jpg)Figure 0001
 
 ## Describing the models
 
@@ -34,7 +34,8 @@ We want to have a backend service for a task management application. First of al
 
 Open an IDE like VS Code or Visual Studio, It does not matter which IDE is used, in this tutorial we use Visual Studio. we create a black solution with the **sample-xswift-task-management**, and next, create a library project with the **Domain** name.
 
-!\[\](/img/docs/0002-solution-explorer.jpg)Figure 0002
+![](/img/docs/0002-solution-explorer.jpg)  
+Figure 0002
 
 According to the picture above (Figure 0002), for the domain project library, we create a folder with the **ProjectAggregation** name and for that create the following folders: **Checks**, **Commands**, **Internal**, **Issues**, **Models**, and **Queries**. In addition, we add a class with the name **ProjectEntity** inside the ProhectAggregation. The naming is conventional and it is better to observe these conventions. In the following, We explain about them one by one.
 
