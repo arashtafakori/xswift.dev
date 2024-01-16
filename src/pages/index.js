@@ -46,14 +46,11 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Implement a backend dotnet service by ${siteConfig.title}`}
+      description="Implement a scalable and testable backend dotnet service based on Domain-driven design, test-driven development, and clean architecture approaches quickly">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <div style={centeredDivStyle}>
-        the art pictures in this page have been&nbsp;<a href="http://www.freepik.com">Designed by vectorjuice / Freepik</a>
-        </div>
       </main>
     </Layout>
   );

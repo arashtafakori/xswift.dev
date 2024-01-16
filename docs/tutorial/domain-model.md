@@ -2,7 +2,9 @@
 sidebar_position: 3
 ---
 
-# Implementing the Domain
+# Domain Model
+
+Article **.** 12/28/2023 **.** [Arash Tafakori](https://github.com/arashtafakori)
 
 ## Designing the subdomain
 

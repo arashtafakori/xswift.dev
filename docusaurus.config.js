@@ -88,7 +88,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} XSwift Project. This website is built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} XSwift Project.`,
       },
       prism: {
         theme: prismThemes.github,
