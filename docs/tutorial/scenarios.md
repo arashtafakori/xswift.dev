@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# Example requirements
+# Scenarios
 
 Article **.** 16/25/2024 **.** [Arash Tafakori](https://github.com/arashtafakori)
 
-As it was mentioned, the example is a simple task management application. For managing a project (like a software development project, a marketing campaign, or any other organized effort), We need to define a project. so that defines one sprint or more for the pro. A Sprint is an iteration within a Project. Each sprint has Strat and End date and can include some tasks. A Task represents a work that needs to be completed within a Project. A task belongs to a project and can just be in one sprint, but can not be in any sprint. each task has a status. At the same time, a task just has a status. It can be 'not started' to 'in progress' to 'completed' or 'blocked'. Users, those who have been assigned a task can change the status of the task. This application has some details. In the next, by Bdd practice, we will gather requirements and write all scenarios. after that, we will design the domain model by DDD practice.
+As it was mentioned, the example is a simple task management application. For managing a project (like a software development project, a marketing campaign, or any other organized effort), We need to define a project. so that defines one sprint or more for the project. A Sprint is an iteration within a Project. Each sprint has Strat and End date and can include some tasks. A Task represents a work that needs to be completed within a Project. A task belongs to a project and can just be in one sprint, but can not be in any sprint. each task has a status. At the same time, a task just has a status. It can be 'not started' to 'in progress' to 'completed' or 'blocked'. Users, those who have been assigned a task can change the status of the task. This application has some details. We will discover requirements and write all scenarios by Bdd practice. after that, we will design the domain model by DDD practice.
 
-Whether you have been experienced in BDD (Behavior-Driven Development) or not, because discovering and identifying the requirements, is easy, as well as modeling. By BDD we will prepare some scenarios to implement. if you are not familiar with BDD, the [BDD in Action](https://www.manning.com/books/bdd-in-action) book by John Ferguson Smart is a great resource to learn it.
+It does not matter, Whether you have been experienced in BDD (Behavior-Driven Development) or not, because discovering and identifying the requirements, is easy, as well as modeling. By BDD we will prepare some scenarios to implement. if you are not familiar with BDD, the [BDD in Action](https://www.manning.com/books/bdd-in-action) book by John Ferguson Smart is a great resource to learn it.
 
 We have the following features and scenarios to do. These scenarios have been prepared for The project feature. in the **How to do the acceptance tests** section, we will see all the user stories and scenarios.
 
@@ -65,7 +65,6 @@ Feature: Project Management
              When restoring project
              Then should restore it successfully
 
-   ------------------------------------------
 ```
 
 Some scenarios will be omitted in the real services that will be implemented by XSwift, which means that we do not write them and test them too. Because they are explicit, XSwift assesses them and If needed a suitable an **issue** will be thrown. For example, the scenario below:

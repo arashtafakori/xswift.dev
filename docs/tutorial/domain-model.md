@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Domain Model
@@ -8,7 +8,11 @@ Article **.** 12/28/2023 **.** [Arash Tafakori](https://github.com/arashtafakori
 
 ## Designing the subdomain
 
-We want to have a backend service for a task management application. First of all, We try to prepare a big picture. We design the domain as a strategic design phase. This app includes 3 parts. Project, sprint, and task parts. According to the scale of the system (the application or the requirements), we can define each part as a bounded context. In this case, the scale of each part is small, so We consider that we have a bounded context equivalent to each part. Therefore. According to the picture below, we have three bounded contexts. Whole of this space is considered as the task management subdomain.
+We want to have a Backend service for a task management application. First of all, We try to prepare a model. We try to design a model based on DDD (Domain-Driven Design) practice. It does not matter, Whether you have been experienced in DDD or not. It is just enough to look for the tutorial. When you finish the tutorial, regarding the experience you have had in CRUD implementation or other ways, you can implement each kind of model by XSWift easily, even complicated models. if you are not familiar with DDD, the [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/) book by Eric Evans is a great resource to learn it.
+
+We design the domain as a strategic design phase. This app includes 3 parts. Project, sprint, and task parts. According to the scale of the system (the application or the requirements), we can define each part as a bounded context. In this case, the scale of each part is small, so we consider that we have three bounded context equivalent to each part. Therefore. According to the picture below, we have three bounded contexts and each bounded context includes one aggregate. The whole of this space is considered as the task management subdomain.
+
+Note that while it is theoretically possible to have more than one aggregate within a bounded context, it's generally recommended to have a single, well-defined aggregate root within a given bounded context. This helps to ensure a clear and straightforward model, making it easier for developers and domain experts to understand and work with the domain.
 
 ![](/img/docs/0001-bounded-context.jpg)Figure 0001
 
@@ -94,3 +98,22 @@ Here, there is just one property for the project entity. It is the Name. it is d
 **MaxLengthShouldBe**: is a built-in XSwift FieldValidationAttribute, to set the maximum of a string property of an entity.  
 **StringLength**: is a built-in Asp.Net Core ValidationAttribute, to set the length of a string property of an entity.  
 **Required**: is a built-in Asp.Net Core ValidationAttribute, to indicate the property is required.
+
+the **Uniqueness** is a virtual method that belongs to the Entity class. It provides a condition for ensuring the uniqueness of the entity. The returned value is a ConditionProperty type specifying uniqueness criteria. For example, when a class implements the IDatabase interface, for the Create, Update, and Restore methods, the uniqueness condition is checked to prevent creating or restoring more than one entity with the same uniqueness criteria. the [xswift-entityframeworkcore](https://www.nuget.org/packages/Xswift.EntityFrameworkCore/) nuget includes an implementation of the IDatabase interface, you can implement your custom concrete class for the IDatabase interface, for example, for MongoDB or other database engines and providers.
+
+the IDatabase interface belongs to XSwift.Datastore namespace.
+
+In the ProjectEntity, we override this method and set the condition and description.
+
+> public override ConditionProperty\<ProjectEntity>? Uniqueness()  
+>    {  
+>        return new **ConditionProperty**\<ProjectEntity>()  
+>        {  
+>            **Condition = x => x.Name == Name**,  
+>            **Description = Resource.UniquenessOfTheProject**  
+>        };  
+>    }
+
+The `Name` field is unique for the project entity and the description is set to a resource value. `The Resource.UniquenessOfTheProject` is "A project with this name has already existed.".  
+
+

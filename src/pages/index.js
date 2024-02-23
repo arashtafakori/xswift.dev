@@ -46,8 +46,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Implement a backend dotnet service by ${siteConfig.title}`}
-      description="Implement a scalable and testable backend dotnet service based on Domain-driven design, test-driven development, and clean architecture approaches quickly">
+      title={`Implement a Backend dotnet service by ${siteConfig.title}`}
+      description="Implement a scalable and testable Backend dotnet service based on Domain-driven design, test-driven development, and clean architecture approaches quickly">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
